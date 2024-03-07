@@ -15,8 +15,6 @@ export function* loginRequest({ payload: data }: ActionType<typeof login.request
   } catch (error: any) {
     const errorMessage = getErrorMessage(error);
 
-    console.log(errorMessage);
-
     // TODO: Add snackbar message
     yield put(login.failure(errorMessage));
   }
@@ -33,10 +31,7 @@ export function* resetPasswordRequest(
   } catch (error: any) {
     const errorMessage = getErrorMessage(error);
 
-    console.log(errorMessage);
-
     // TODO: Add snackbar message
-
     yield put(passwordReset.failure(errorMessage));
   }
 }
@@ -49,8 +44,6 @@ export function* passwordSetSaga({ payload: data }: ActionType<typeof passwordSe
     yield put(passwordReset.success());
   } catch (error: any) {
     const errorMessage = getErrorMessage(error);
-
-    console.log(errorMessage);
 
     // TODO: Add snackbar message
     yield put(passwordReset.failure(errorMessage));
